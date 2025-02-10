@@ -14,6 +14,8 @@ class Branch:
 
     def __init__(self, epoch: str) -> None:
         self.epoch = epoch
+    def __str__(self) -> str:
+        return f"{datetime.fromtimestamp(float(self.epoch))}"
 
     def compare_followers(self, other) -> list:
         return list(set(self.get_followers()) - set(other.get_followers()))
